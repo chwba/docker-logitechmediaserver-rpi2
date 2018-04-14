@@ -11,7 +11,3 @@ To properly run it, creating a service is required (lms.service):
 
 
 The web interface runs on port 9000.
-
-Thanks to larsks for his work, I just made some modifications.
-
-https://hub.docker.com/r/peaceofmind/lms/
