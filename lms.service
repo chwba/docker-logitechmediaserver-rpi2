@@ -1,4 +1,4 @@
-#[Unit]
+[Unit]
 Description=logitechmediaserver-rpi2 container
 Requires=service.system.docker.service
 After=service.system.docker.service
