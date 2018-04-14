@@ -10,7 +10,7 @@ TimeoutStartSec=0
 ExecStartPre=-/bin/sh -c "mkdir -p /storage/.kodi/userdata/Apps/LMS"
 ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
 --rm \
---name=lms \
+--name=logitechmediaserver-rpi2 \
 --hostname=logitech-media-server \
 -p 9000:9000 \
 -p 3483:3483 \
@@ -18,7 +18,7 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
 -e TZ=Europe/Berlin \
 -v /storage/.kodi/userdata/Apps/LMS:/srv/squeezebox \
 -v /var/media:/srv/music \
-peaceofmind/logitechmediaserver-rpi2
+logitechmediaserver-rpi2
 
 /storage/.kodi/addons/service.system.docker/examples/lms.service
 
