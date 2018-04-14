@@ -25,15 +25,19 @@ echo restarting lms.service
 systemctl start lms
 echo done ...
 
-read -t 10 -n 1 -p "Show journalctl -u lms? [Y/n] " reply;
-if [ "$reply" != "" ]; then journalctl -u lms; fi
-if [ "$reply" != "n" ]; then echo
-    fi
+#read -t 10 -n 1 -p "Show journalctl -u lms? [Y/n] " reply;
+#if [ "$reply" != "" ]; then journalctl -u lms; fi
+#if [ "$reply" != "n" ]; then echo
+#    fi
 	
-read -t 10 -n 1 -p "Show more/again? [Y/n] " reply;
-if [ "$reply" != "" ]; then journalctl -u lms; fi
-if [ "$reply" != "n" ]; then echo
-    fi
-	
-read -p "Press any key to close"
-	
+#read -t 10 -n 1 -p "Show more/again? [Y/n] " reply;
+#if [ "$reply" != "" ]; then journalctl -u lms; fi
+#if [ "$reply" != "n" ]; then echo
+#    fi
+
+journalctl -u lms;
+read -t 10 -n 1 -p "Waiting 10 seconds then journalctl -u lms again..."
+journalctl -u lms;
+read -t 10 -n 1 -p "Waiting 20 Seconds for review..."
+
+reboot now
