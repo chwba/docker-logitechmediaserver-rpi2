@@ -25,12 +25,6 @@ systemctl start lms
 echo done ...
 
 read -t 10 -n 1 -p "Show journalctl -u lms? [Y/n] " reply;
-if [ "$reply" != "" ]; then journalctl -u lms; fi
+if [ "$reply" != "" ]; then journalctl -u lms; journalctl -u lms; fi
 if [ "$reply" != "n" ]; then echo
     fi
-	
-read -t 10 -n 1 -p "Show more/again? [Y/n] " reply;
-if [ "$reply" != "" ]; then journalctl -u lms; fi
-if [ "$reply" != "n" ]; then echo
-    fi
-	
