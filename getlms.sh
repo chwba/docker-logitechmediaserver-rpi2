@@ -11,7 +11,8 @@ sleep 5
 
 cd /storage/.kodi/docker                                                                  && \
 wget https://github.com/g-uru/docker-logitechmediaserver-rpi2/archive/master.zip          && \
-unzip master.zip                                                                          && \
+unzip master.zip 																		  && \
+cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh .            && \
 cd docker-logitechmediaserver-rpi2-master                                                 && \
 docker build -t logitechmediaserver-rpi2 .                                                && \
 cd /storage/.kodi/docker                                                                  && \
