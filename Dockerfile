@@ -8,7 +8,7 @@ ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revisi
 
 RUN apt-get update && \
 apt-get -y install apt-utils && \
-apt-get clean 
+apt-get clean
 
 RUN apt-get update && \
 apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl && \
