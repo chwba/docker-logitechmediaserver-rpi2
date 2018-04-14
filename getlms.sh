@@ -7,7 +7,7 @@ sleep 5
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 /storage/.kodi/addons/service.system.docker/bin/docker rmi $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq)
-/storage/.kodi/addons/service.system.docker/bin/docker system prune -a
+/storage/.kodi/addons/service.system.docker/bin/docker system prune -af
 
 cd /storage/.kodi/docker                                                                  && \
 wget https://github.com/g-uru/docker-logitechmediaserver-rpi2/archive/master.zip          && \
