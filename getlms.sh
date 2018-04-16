@@ -2,6 +2,7 @@
 set -x
 echo stopping lms.service
 systemctl stop lms
+systemctl stop lmslog
 sleep 2
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
@@ -15,7 +16,8 @@ cd docker-logitechmediaserver-rpi2-master
 echo rebuilding Docker...
 /storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .										
 
-echo restarting lms.service
+echo restarting services ...
+systemctl start lmslog
 systemctl start lms
 
 # for interactive mode
@@ -42,9 +44,9 @@ rm -f master.zip
 rm -f -r docker-logitechmediaserver-rpi2-master
 ls -la
 
-echo Waiting 20 Seconds for LMS to finish ...
-sleep 20
-journalctl -u lms
-echo Rebooting in 5 seconds  ...
-sleep 5
+#echo Waiting 20 Seconds for LMS to finish ...
+#sleep 20
+#journalctl -u lms
+#echo Rebooting in 5 seconds  ...
+#sleep 5
 reboot now
