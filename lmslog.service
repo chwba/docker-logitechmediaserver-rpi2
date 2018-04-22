@@ -1,0 +1,6 @@
+[Unit]
+Description=send lms.service status to getlms.log
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c 'journalctl -u lms >> /some/path/logs/getlms.log'

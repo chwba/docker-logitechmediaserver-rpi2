@@ -1,0 +1,10 @@
+[Unit]
+Description=Run lmslog.service every 3 Hours 
+Unit=lmslog.service
+
+[Timer]
+OnBootSec=5sec
+OnUnitActiveSec=3h
+
+[Install]
+WantedBy=multi-user.target

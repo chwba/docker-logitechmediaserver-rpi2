@@ -2,7 +2,7 @@
 set -x
 echo stopping lms.service
 systemctl stop lms
-systemctl stop lmslog
+systemctl stop lmslog.timer
 sleep 2
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
@@ -17,8 +17,8 @@ echo rebuilding Docker...
 /storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .										
 
 echo restarting services ...
-systemctl start lmslog
 systemctl start lms
+systemctl start lmslog.timer
 
 # for interactive mode
 #read -t 10 -n 1 -p "Show journalctl -u lms? [Y/n] " reply;
