@@ -6,14 +6,14 @@
 groupadd -g $SQUEEZE_GID squeezeboxserver
 
 useradd -u $SQUEEZE_UID -g $SQUEEZE_GID \
-	-d /usr/share/squeezeboxserver/ \
-	-c 'Logitech Media Server' \
-	squeezeboxserver
+    -d /usr/share/squeezeboxserver/ \
+    -c 'Logitech Media Server' \
+    squeezeboxserver
 
 if [ "$SQUEEZE_VOL" ] && [ -d "$SQUEEZE_VOL" ]; then
-	for subdir in prefs logs cache; do
-		mkdir -p $SQUEEZE_VOL/$subdir
-	done
+    for subdir in prefs logs cache; do
+        mkdir -p $SQUEEZE_VOL/$subdir
+    done
 fi
 
 

@@ -1,0 +1,337 @@
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+* text=auto
+
+#tabs2spaces start
+
+*.c filter=tabspace filter=tabspace
+*.cc filter=tabspace
+*.cxx filter=tabspace
+*.cpp filter=tabspace
+*.c++ filter=tabspace
+*.hpp filter=tabspace
+*.h filter=tabspace
+*.h++ filter=tabspace
+*.hh filter=tabspace
+*.css filter=tabspace
+*.df filter=tabspace
+*.htm filter=tabspace
+*.html filter=tabspace
+*.java filter=tabspace
+*.js filter=tabspace
+*.json filter=tabspace
+*.jsp filter=tabspace
+*.jspf filter=tabspace
+*.properties filter=tabspace
+*.sh filter=tabspace
+*.svg filter=tabspace
+*.tld filter=tabspace
+*.txt filter=tabspace
+*.xml filter=tabspace
+*.pl filter=tabspace
+*.pm filter=tabspace
+*.pxd filter=tabspace
+*.py filter=tabspace
+*.py3 filter=tabspace
+*.pyw filter=tabspace
+*.pyx filter=tabspace
+.php filter=tabspace
+*.css filter=tabspace
+*.sass filter=tabspace
+*.scss filter=tabspace
+*.less filter=tabspace
+*.styl filter=tabspace
+*.js filter=tabspace
+*.ts filter=tabspace
+*.coffee filter=tabspace
+*.json filter=tabspace
+*.htm filter=tabspace
+*.html filter=tabspace
+*.xml filter=tabspace
+*.svg filter=tabspace
+*.ini filter=tabspace
+*.inc filter=tabspace
+*.pl filter=tabspace
+*.rb filter=tabspace
+*.py filter=tabspace
+*.scm filter=tabspace
+*.sql filter=tabspace
+*.sh filter=tabspace
+*.bat filter=tabspace
+# templates filter=tabspace
+*.ejs filter=tabspace
+*.hbt filter=tabspace
+*.jade filter=tabspace
+*.haml filter=tabspace
+*.hbs filter=tabspace
+*.dot filter=tabspace
+*.tmpl filter=tabspace
+*.phtml filter=tabspace
+*.latte filter=tabspace
+.htaccess filter=tabspace
+# git config filter=tabspace
+.gitattributes filter=tabspace
+.gitignore filter=tabspace
+.gitconfig filter=tabspace
+.jshintrc filter=tabspace
+.jscsrc filter=tabspace
+.jshintignore filter=tabspace
+.csslintrc filter=tabspace
+# misc config filter=tabspace
+*.yaml filter=tabspace
+*.yml filter=tabspace
+.editorconfig filter=tabspace
+*.npmignore filter=tabspace
+*.bowerrc filter=tabspace
+Procfile filter=tabspace
+.slugignore filter=tabspace
+*.md filter=tabspace
+LICENSE filter=tabspace
+AUTHORS filter=tabspace
+
+#tabs2space end
+
+# Windows crlf files
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+*.psc1 text eol=crlf
+*.ps1xml text eol=crlf
+*.clixml text eol=crlf
+*.xml eol=crlf
+*.sln text eol=crlf
+*.csproj text eol=crlf
+*.pshproj text eol=crlf
+*.cs text eol=crlf
+*.txt text eol=crlf
+/.idea/* text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.reg text eol=crlf
+*.vbs text eol=crlf
+*.ini text eol=crlf
+*.ahk text eol=crlf
+*FontReg.md5 text eol=crlf
+*.epf eol=crlf
+*.cfg eol=crlf
+*.config eol=crlf
+*.ffs_batch eol=crlf
+
+#sources
+*.c text
+*.cc text
+*.cxx text
+*.cpp text
+*.c++ text
+*.hpp text
+*.h text
+*.h++ text
+*.hh text
+
+# Compiled Object files
+*.slo binary
+*.lo binary
+*.o binary
+*.obj binary
+
+# Precompiled Headers
+*.gch binary
+*.pch binary
+
+# Compiled Dynamic libraries
+*.so binary
+*.dylib binary
+*.dll binary
+
+# Compiled Static libraries
+*.lai binary
+*.la binary
+*.a binary
+*.lib binary
+
+# Executables
+*.exe binary
+*.out binary
+*.app binary
+
+# Documents
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+*.md text
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.ico binary
+*.svg binary
+*.eps binary
+
+
+# These files are text and should be normalized (Convert crlf => lf)
+
+*.css           text
+*.df            text
+*.htm           text
+*.html          text
+*.java          text
+*.js            text
+*.json          text
+*.jsp           text
+*.jspf          text
+*.properties    text
+*.sh            text
+*.svg           text
+*.tld           text
+
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.gif           binary
+*.ico           binary
+*.jar           binary
+*.jpg           binary
+*.jpeg          binary
+*.png           binary
+*.so            binary
+*.war           binary
+
+# Basic .gitattributes for a perl repo.
+
+# Source files
+# ============
+*.pl 		text
+*.pm 		text
+# Basic .gitattributes for a python repo.
+
+# Source files
+# ============
+*.pxd		text
+*.py 		text
+*.py3 		text
+*.pyw 		text
+*.pyx  		text
+
+# Binary files
+# ============
+*.db		binary
+*.p 		binary
+*.pkl 		binary
+*.pyc 		binary
+*.pyd		binary
+*.pyo 		binary
+
+# Note: .db, .p, and .pkl files are associated
+# with the python modules ``pickle``, ``dbm.*``,
+# ``shelve``, ``marshal``, ``anydbm``, & ``bsddb``
+# (among others).# These settings are for any web project
+
+# source code
+*.php text
+*.css text
+*.sass text
+*.scss text
+*.less text
+*.styl text
+*.js text
+*.ts text
+*.coffee text
+*.json text
+*.htm text
+*.html text
+*.svg text
+*.inc text
+*.pl text
+*.rb text
+*.py text
+*.scm text
+*.sql text
+*.sh text
+
+# templates
+*.ejs text
+*.hbt text
+*.jade text
+*.haml text
+*.hbs text
+*.dot text
+*.tmpl text
+*.phtml text
+*.latte text
+
+# server config
+.htaccess text
+
+# git config
+.gitattributes text
+.gitignore text
+.gitconfig text
+
+# code analysis config
+.jshintrc text
+.jscsrc text
+.jshintignore text
+.csslintrc text
+
+# misc config
+*.yaml text
+*.yml text
+.editorconfig text
+
+# build config
+*.npmignore text
+*.bowerrc text
+
+# Heroku
+Procfile text
+.slugignore text
+
+# Documentation
+*.md text
+LICENSE text
+AUTHORS text
+
+
+# (binary is a macro for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.pyc binary
+*.pdf binary
