@@ -10,7 +10,7 @@ sleep 2
 /storage/.kodi/addons/service.system.docker/bin/docker system prune -af
 
 cd /storage/.kodi/docker
-wget https://github.com/g-uru/docker-logitechmediaserver-rpi2/archive/master.zip
+wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip
 unzip master.zip
 cd docker-logitechmediaserver-rpi2-master
 echo rebuilding Docker...
