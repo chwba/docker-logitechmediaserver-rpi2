@@ -1,6 +1,6 @@
 ### Guide for Raspberry Pi 2 - LibreELEC:
 * ssh root@your-rasp-ip
-* cd /storage/.kodi/docker && wget https://github.com/g-uru/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip
+* cd /storage/.kodi/docker && wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip
 * cp /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh .
 * ./getlms.sh
 
