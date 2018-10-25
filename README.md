@@ -7,7 +7,7 @@
 **CAUTION: WILL STOP/DELETE ALL DOCKER CONTAINERS/IMAGES**
 
 #### Automatic updates:
-To activate daily updates just create a task with the following content:
+To activate daily updates just create a task with the following content which runs every day:
 
 ssh -q root@your-rasp-ip /storage/.kodi/docker/getlms.sh
 
