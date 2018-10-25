@@ -4,7 +4,7 @@
 * cp /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh .
 * ./getlms.sh
 
-**CAUTION: WILL STOP/DELETE ALL DOCKER CONTAINERS/IMAGES**
+**CAUTION: WILL STOP/DELETE ALL DOCKER CONTAINERS/IMAGES (to change this behaviour getlms.sh must be amended manually**
 
 #### Automatic updates:
 To activate daily updates just create a task with the following content which runs every day:
