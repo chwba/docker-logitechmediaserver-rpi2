@@ -1,5 +1,5 @@
 [Unit]
-Description=Run lmslog.service every 3 Hours 
+Description=Run lmslog.service every 3 Hours
 Unit=lmslog.service
 
 [Timer]

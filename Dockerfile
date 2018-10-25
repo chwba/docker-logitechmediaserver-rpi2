@@ -1,5 +1,5 @@
 FROM arm32v7/debian:stretch-slim
-MAINTAINER g-uru <22568014+g-uru@users.noreply.github.com>
+MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
 
 ENV SQUEEZE_VOL /srv/squeezebox
 ENV LANG C.UTF-8

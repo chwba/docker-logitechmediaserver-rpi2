@@ -19,9 +19,7 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
 -v /storage/.kodi/userdata/Apps/LMS:/srv/squeezebox \
 -v /var/media:/srv/music \
 logitechmediaserver-rpi2
-
 /storage/.kodi/addons/service.system.docker/examples/lms.service
-
 ExecStop=/storage/.kodi/addons/service.system.docker/bin/docker stop logitechmediaserver-rpi2
 
 [Install]
