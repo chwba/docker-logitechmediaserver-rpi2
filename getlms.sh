@@ -2,8 +2,10 @@
 set -x
 echo stopping lms.service
 systemctl stop lms
+systemctl stop lmslog
 systemctl stop lmslog.timer
 systemctl disable lms
+systemctl stop lmslog
 systemctl disable lmslog.timer
 sleep 2
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
