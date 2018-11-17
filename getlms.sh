@@ -4,9 +4,8 @@ echo stopping lms.service
 systemctl stop lms
 systemctl stop lmslog
 systemctl stop lmslog.timer
-systemctl disable lms
-systemctl stop lmslog
-systemctl disable lmslog.timer
+#systemctl disable lms
+#systemctl disable lmslog.timer
 sleep 2
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
@@ -21,12 +20,12 @@ cd docker-logitechmediaserver-rpi2-master
 cp -f *.service /storage/.kodi/addons/service.system.docker/examples
 cp -f *.timer /storage/.kodi/addons/service.system.docker/examples
 echo rebuilding Docker...
-/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .										
+/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
 
 echo restarting services ...
-systemctl enable /storage/.kodi/addons/service.system.docker/examples/lms.service
-systemctl enable /storage/.kodi/addons/service.system.docker/examples/lmslog.service
-systemctl enable /storage/.kodi/addons/service.system.docker/examples/lmslog.timer
+#systemctl enable /storage/.kodi/addons/service.system.docker/examples/lms.service
+#systemctl enable /storage/.kodi/addons/service.system.docker/examples/lmslog.service
+#systemctl enable /storage/.kodi/addons/service.system.docker/examples/lmslog.timer
 systemctl start lms
 systemctl start lmslog
 systemctl start lmslog.timer
