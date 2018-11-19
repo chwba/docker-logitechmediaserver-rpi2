@@ -1,6 +1,9 @@
 [Unit]
-Description=send lms.service status to getlms.log
+Description=Keep LMS up and do logs
 
 [Service]
 Type=oneshot
+ExecStart=/usr/bin/sh -c "date >> /storage/Tomato/logs/getlms.log"
+ExecStart=/usr/bin/sh -c "echo LMS-log requested... >> /storage/Tomato/logs/getlms.log"
 ExecStart=/usr/bin/sh -c "journalctl -u lms >> /storage/Tomato/logs/getlms.log"
+ExecStart=/usr/bin/sh -c "source /storage/.kodi/docker/lmsup.sh"

@@ -1,10 +1,12 @@
 [Unit]
-Description=Run lmslog.service every 3 Hours
-Unit=lmslog.service
+Description=Run lmslog every 15 minutes
 
 [Timer]
-OnBootSec=5sec
-OnUnitActiveSec=3h
+OnBootSec=5m
+#OnCalendar=*:*:0,15,30,45
+#systemd-analyze calendar *:0/15
+OnCalendar=*:0/15
+Unit=lmslog.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=timers.target
