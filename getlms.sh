@@ -8,10 +8,10 @@ sleep 3
 #systemctl disable lms
 #systemctl disable lmslog.service
 #systemctl disable lmslog.timer
-/storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq);
-/storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq);
-/storage/.kodi/addons/service.system.docker/bin/docker rmi $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq);
-/storage/.kodi/addons/service.system.docker/bin/docker system prune -af
+/storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq) && \
+/storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq) && \
+/storage/.kodi/addons/service.system.docker/bin/docker rmi $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq) && \
+/storage/.kodi/addons/service.system.docker/bin/docker system prune -af && \
 
 cd /storage/.kodi/docker
 wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip && \
@@ -24,7 +24,7 @@ cd docker-logitechmediaserver-rpi2-master
 #cp -f *.timer /storage/.config/system.d/
 
 echo rebuilding Docker...
-/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
+/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 . && \
 
 echo restarting services ...
 #systemctl enable lms.service
@@ -36,10 +36,10 @@ systemctl start lmslog.timer && \
 
 echo "Delete tmpfiles..overwrite .sh-files"
 cd /storage/.kodi/docker
-cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh /storage/.kodi/docker && \
-cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/lmsup.sh /storage/.kodi/docker && \
-chmod +x /storage/.kodi/docker/getlms.sh
-chmod +x /storage/.kodi/docker/lmsup.sh
+#cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh /storage/.kodi/docker && \
+#cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/lmsup.sh /storage/.kodi/docker && \
+# chmod +x /storage/.kodi/docker/getlms.sh
+# chmod +x /storage/.kodi/docker/lmsup.sh
 rm -f master.zip
 rm -f -r docker-logitechmediaserver-rpi2-master
 
