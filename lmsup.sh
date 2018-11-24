@@ -1,5 +1,5 @@
 #!/bin/sh
-output=$(curl -s localhost:9000 >/dev/null && echo Success. || echo Fail.)
+output=$(curl -s localhost:9000 -m 10 >/dev/null && echo Success. || echo Fail.)
 filesize=$(find /storage/Tomato/logs/getlms.log  -type f -size +2048k)
 
 echo "------------------------------------------------------------------------------------------------------------------------------------------------------" >> /storage/Tomato/logs/getlms.log
