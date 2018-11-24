@@ -13,9 +13,9 @@ sleep 3
 /storage/.kodi/addons/service.system.docker/bin/docker rmi $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq) && \
 /storage/.kodi/addons/service.system.docker/bin/docker system prune -af && \
 
-cd /storage/.kodi/docker
-wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip && \
-cd docker-logitechmediaserver-rpi2-master
+#cd /storage/.kodi/docker
+#wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip && \
+#cd docker-logitechmediaserver-rpi2-master
 
 # overwrite service files
 #cp -f *.service /storage/.kodi/addons/service.system.docker/examples
