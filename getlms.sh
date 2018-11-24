@@ -49,6 +49,7 @@ rm -f -r docker-logitechmediaserver-rpi2-master
 #journalctl -u lms
 #echo Rebooting in 5 seconds  ...
 #sleep 5
+echo "rebooting..."
 reboot now
 echo "######################################################################################################################################################" >> /storage/Tomato/logs/getlms.log
 
