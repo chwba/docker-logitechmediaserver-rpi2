@@ -1,8 +1,9 @@
 #!/bin/sh
 set -x
+echo "######################################################################################################################################################" >> /storage/Tomato/logs/getlms.log
 echo stopping lms.service
-systemctl stop lms && \
 systemctl stop lmslog.timer && \
+systemctl stop lms && \
 sleep 3
 #systemctl disable lms
 #systemctl disable lmslog.service
@@ -33,7 +34,7 @@ systemctl start lms && \
 systemctl start lmslog.timer && \
 
 
-echo "Delete tmpfiles..overwrite .shfiles"
+echo "Delete tmpfiles..overwrite .sh-files"
 cd /storage/.kodi/docker
 cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh /storage/.kodi/docker && \
 cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/lmsup.sh /storage/.kodi/docker && \
@@ -49,4 +50,5 @@ rm -f -r docker-logitechmediaserver-rpi2-master
 #echo Rebooting in 5 seconds  ...
 #sleep 5
 reboot now
+echo "######################################################################################################################################################" >> /storage/Tomato/logs/getlms.log
 
