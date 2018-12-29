@@ -1,15 +1,12 @@
 ### Install:
-* ssh root@your-rasp-ip
+* ssh root@rasp-ip
 * cd /storage/.kodi/docker && wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip
-* cp /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/getlms.sh .
-* ./getlms.sh
+* cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/
+* ./init.sh
 
-**CAUTION: WILL STOP/DELETE ALL DOCKER CONTAINERS/IMAGES (to change this behaviour getlms.sh must be amended manually**
+**CAUTION: WILL STOP AND DELETE ALL DOCKER CONTAINERS/IMAGES (to change this behaviour getlms.sh must be amended manually**
 
 #### Automatic updates:
-To activate daily updates just create a task with the following content which runs every day:
+For daily updates through rebuilding the docker image just create a task with the following content which runs every day:
 
-ssh -q root@your-rasp-ip /storage/.kodi/docker/getlms.sh
-
-
-
+ssh -q root@rasp-ip /storage/.kodi/docker/init.sh
