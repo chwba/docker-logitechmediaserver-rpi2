@@ -29,6 +29,7 @@ systemctl start lmslog.timer
 
 echo "Delete tmpfiles..overwrite .init.sh..."
 cd /storage/.kodi/docker
+rm -f /storage/.kodi/docker/init.sh
 cp -f /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/init.sh /storage/.kodi/docker
 chmod +x /storage/.kodi/docker/init.sh
 rm -f /storage/.kodi/docker/master.zip
