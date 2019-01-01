@@ -36,8 +36,8 @@ rm -f /storage/.kodi/docker/master.zip
 rm -f -r /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 rm -f /storage/.kodi/docker/getlms.sh
 
-echo "Rebooting..."
+#echo "Rebooting..."
 set +x
-reboot
+#reboot
 echo "######################################################################################################################################################" >> /storage/Tomato/logs/getlms.log
 
