@@ -1,6 +1,9 @@
 #!/bin/sh
 set -x
-echo get master from repo...
+echo disconnect vpn..
+kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Disconnect)"
+echo
+echo get master from repo..
 cd /storage/.kodi/docker
 wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master

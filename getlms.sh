@@ -36,8 +36,10 @@ rm -f /storage/.kodi/docker/master.zip
 rm -f -r /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 rm -f /storage/.kodi/docker/getlms.sh
 
+
+echo reconnect vpn..
+kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Connect 1)"
 #echo "Rebooting..."
 set +x
 #reboot
 echo "######################################################################################################################################################" >> /storage/Tomato/logs/getlms.log
-
