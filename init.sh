@@ -2,6 +2,7 @@
 set -x
 echo disconnect vpn..
 kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Disconnect)"
+sleep 5
 echo
 echo get master from repo..
 cd /storage/.kodi/docker

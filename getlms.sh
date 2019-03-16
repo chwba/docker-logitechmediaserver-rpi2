@@ -35,7 +35,7 @@ chmod +x /storage/.kodi/docker/init.sh
 rm -f /storage/.kodi/docker/master.zip
 rm -f -r /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 rm -f /storage/.kodi/docker/getlms.sh
-
+sleep 15
 
 echo reconnect vpn..
 kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Connect 1)"
