@@ -13,6 +13,7 @@ ExecStart=/storage/.kodi/addons/service.system.docker/bin/docker run \
 --name=logitechmediaserver-rpi2 \
 --hostname=logitech-media-server \
 -p 9000:9000 \
+-p 9090:9090 \
 -p 3483:3483 \
 -p 3483:3483/udp \
 -e TZ=Europe/Berlin \
