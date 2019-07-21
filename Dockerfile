@@ -7,10 +7,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=debarm
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends apt-utils
+		apt-get -y install --no-install-recommends apt-utils
 RUN apt-get update && \
-	apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl tzdata && \
-	apt-get clean
+		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl tzdata && \
+		apt-get clean
 
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
@@ -18,8 +18,8 @@ RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	rm -f /tmp/logitechmediaserver.deb && \
 	apt-get clean
 
-RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d \
-    && chmod +x /usr/sbin/policy-rc.d
+RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+		chmod +x /usr/sbin/policy-rc.d
 
 # This will be created by the entrypoint script.
 RUN userdel squeezeboxserver
