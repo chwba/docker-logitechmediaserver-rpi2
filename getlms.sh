@@ -16,6 +16,10 @@ sleep 1
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker system prune -af
 sleep 1
+/storage/.kodi/addons/service.system.docker/bin/docker image prune -af
+sleep 1
+/storage/.kodi/addons/service.system.docker/bin/docker container prune -af
+sleep 1
 
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 sleep 1

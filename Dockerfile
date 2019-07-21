@@ -21,14 +21,14 @@ RUN apt-get update && \
 			&& \
 	apt-get clean
 
+RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+		chmod +x /usr/sbin/policy-rc.d
+
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
 	apt-get update && dpkg -i /tmp/logitechmediaserver.deb && \
 	rm -f /tmp/logitechmediaserver.deb && \
 	apt-get clean
-
-RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
-		chmod +x /usr/sbin/policy-rc.d
 
 # This will be created by the entrypoint script.
 RUN userdel squeezeboxserver
