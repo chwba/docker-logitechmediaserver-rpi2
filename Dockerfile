@@ -19,6 +19,8 @@ RUN apt-get update && \
 		&& \
 	apt-get clean
 
+RUN echo exit 0 > /usr/sbin/policy-rc.d
+
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
 	apt-get update && dpkg -i /tmp/logitechmediaserver.deb && \
