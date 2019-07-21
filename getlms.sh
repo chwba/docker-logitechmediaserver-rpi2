@@ -8,6 +8,7 @@ sleep 3
 systemctl disable lms
 systemctl disable lmslog.service
 systemctl disable lmslog.timer
+sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
@@ -20,13 +21,16 @@ sleep 1
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker container prune -f
 sleep 1
+/storage/.kodi/addons/service.system.docker/bin/docker network prune -f
 
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 sleep 1
 
+set -e
 echo rebuilding Docker...
-/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 . --security-opt apparmor=docker-default
+/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
 
+set +e
 echo restarting services ...
 sleep 5
 systemctl enable lms.service
