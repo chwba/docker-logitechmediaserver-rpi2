@@ -1,5 +1,6 @@
 FROM arm32v7/debian:stretch-slim
 MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 ENV SQUEEZE_VOL /srv/squeezebox
 ENV LANG C.UTF-8
@@ -19,7 +20,8 @@ RUN apt-get update && \
 		&& \
 	apt-get clean
 
-RUN echo exit 0 > /usr/sbin/policy-rc.d
+RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d \
+    && chmod +x /usr/sbin/policy-rc.d
 
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
