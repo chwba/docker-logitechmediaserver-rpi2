@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=debarm
 
 RUN apt-get update && \
-apt-get update && \
 apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl && \
 apt-get clean
 
