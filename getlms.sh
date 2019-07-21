@@ -18,6 +18,7 @@ sleep 1
 sleep 1
 
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
+sleep 1
 
 echo rebuilding Docker...
 /storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
