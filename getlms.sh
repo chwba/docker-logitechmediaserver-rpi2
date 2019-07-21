@@ -9,9 +9,13 @@ systemctl disable lms
 systemctl disable lmslog.service
 systemctl disable lmslog.timer
 /storage/.kodi/addons/service.system.docker/bin/docker stop $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
+sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker rm $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
+sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker rmi $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq)
+sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker system prune -af
+sleep 1
 
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 
