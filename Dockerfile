@@ -9,8 +9,17 @@ ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revisi
 RUN apt-get update && \
 		apt-get -y install --no-install-recommends apt-utils
 RUN apt-get update && \
-		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl tzdata && \
-		apt-get clean
+		apt-get -y install \
+			curl \
+			wget \
+			faad \
+			flac \
+			lame \
+			sox \
+			libio-socket-ssl-perl \
+			tzdata \
+			&& \
+	apt-get clean
 
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
