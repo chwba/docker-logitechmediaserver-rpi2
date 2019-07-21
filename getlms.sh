@@ -18,14 +18,14 @@ sleep 1
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker image prune -af
 sleep 1
-/storage/.kodi/addons/service.system.docker/bin/docker container prune -af
+/storage/.kodi/addons/service.system.docker/bin/docker container prune -f
 sleep 1
 
 cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master
 sleep 1
 
 echo rebuilding Docker...
-/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
+/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 . --security-opt apparmor=docker-default
 
 echo restarting services ...
 sleep 5
