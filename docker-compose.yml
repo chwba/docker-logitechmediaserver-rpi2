@@ -24,7 +24,7 @@ services:
     build:
       context: ./
       dockerfile: gitDockerfile
-      image: gitDocker
+      image: git_docker
       container_name: git
 volumes:
   squeezebox:
