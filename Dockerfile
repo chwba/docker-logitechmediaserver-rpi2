@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:xenial
+FROM arm32v7/debian:stable-slim
 MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
 
 ENV SQUEEZE_VOL /srv/squeezebox
@@ -7,21 +7,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=debarm
 
 RUN apt-get update && \
-		apt-get -y install --no-install-recommends apt-utils && \
-	apt-get clean
+		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl && \
+		apt-get clean && apt-get autoremove && apt-get autoclean
 
-RUN apt-get update && \
-		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl tzdata && \
-	apt-get clean
-
-RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d && \
+RUN printf "#\041/bin/sh\nexit 0\n" > /usr/sbin/policy-rc.d && \
 		chmod +x /usr/sbin/policy-rc.d
 
 RUN url=$(curl "$PACKAGE_VERSION_URL") && \
-	curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
-	apt-get update && dpkg -i /tmp/logitechmediaserver.deb && \
-	rm -f /tmp/logitechmediaserver.deb && \
-	apt-get clean
+		curl -Lsf -o /tmp/logitechmediaserver.deb $url && \
+		apt-get update && dpkg -i /tmp/logitechmediaserver.deb && \
+		rm -f /tmp/logitechmediaserver.deb && \
+		apt-get clean && apt-get autoremove && apt-get autoclean
 
 # This will be created by the entrypoint script.
 RUN userdel squeezeboxserver

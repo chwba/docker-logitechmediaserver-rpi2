@@ -4,7 +4,8 @@ version: "2.3"
 
 services:
   lms:
-    image: larsks/logitech-media-server
+    build:
+      context: ./
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - squeezebox:/srv/squeezebox
