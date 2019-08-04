@@ -26,14 +26,14 @@ sleep 1
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker network prune -f
 
-#set -e
+set -e
 echo Rebuilding container...
 cd /storage/git/docker-logitechmediaserver-rpi2
 sleep 1
 #/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
-docker compose up &
+/storage/bin/docker-compose up &
+set +e
 
-#set +e
 #echo restarting services ...
 #sleep 5
 #systemctl enable lms.service
