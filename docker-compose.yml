@@ -22,8 +22,8 @@ services:
 #    init: true
   git:
     build:
-    image: git_docker
       context: ./
       dockerfile: gitDockerfile
+    image: git_docker
 volumes:
   squeezebox:
