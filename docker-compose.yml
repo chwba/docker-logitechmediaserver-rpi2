@@ -8,8 +8,8 @@ services:
       context: ./
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - squeezebox:/srv/squeezebox
-      - ${AUDIO_DIR}:/srv/music
+      - /storage/squeezebox:/srv/squeezebox
+      - /storage/music:/srv/music
     ports:
 ## uncomment the following line if you want to be able to
 ## access the web ui on port 80.
