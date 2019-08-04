@@ -26,12 +26,12 @@ sleep 1
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker network prune -f
 
-set -e
 echo Rebuilding container...
+set -e
 cd /storage/git/docker-logitechmediaserver-rpi2
 sleep 1
 #/storage/.kodi/addons/service.system.docker/bin/docker build -t logitechmediaserver-rpi2 .
-/storage/bin/docker-compose up &
+/storage/bin/docker-compose up -d
 set +e
 
 #echo restarting services ...
