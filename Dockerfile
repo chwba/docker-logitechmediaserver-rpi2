@@ -1,13 +1,13 @@
-FROM arm32v7/debian:stable-slim
+FROM arm32v7/debian:buster-slim
 MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
 
 ENV SQUEEZE_VOL /srv/squeezebox
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=debarm
+ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.2&revision=1&geturl=1&os=debarm
 
 RUN apt-get update && \
-		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl && \
+		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl lsb-base && \
 		apt-get clean && apt-get autoremove && apt-get autoclean
 
 RUN printf "#\041/bin/sh\nexit 0\n" > /usr/sbin/policy-rc.d && \
@@ -23,7 +23,8 @@ RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 RUN userdel squeezeboxserver
 
 VOLUME $SQUEEZE_VOL
-EXPOSE 3483 3483/udp 9000 9090
+#EXPOSE 3483 3483/udp 9000 9090
+EXPOSE 3483 3483/udp 9000
 
 COPY entrypoint.sh /entrypoint.sh
 COPY start-squeezebox.sh /start-squeezebox.sh

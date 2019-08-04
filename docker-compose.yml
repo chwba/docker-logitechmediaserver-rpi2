@@ -15,11 +15,16 @@ services:
 ## access the web ui on port 80.
 #     - "80:9000"
       - "9000:9000"
-      - "9090:9090"
+#      - "9090:9090"
       - "3483:3483"
       - "3483:3483/udp"
     restart: always
-    init: true
-
+#    init: true
+  git:
+    build:
+      context: ./
+      dockerfile: gitDockerfile
+      image: gitDocker
+      container_name: git
 volumes:
-squeezebox:
+  squeezebox:
