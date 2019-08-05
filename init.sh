@@ -1,8 +1,8 @@
 #!/bin/sh
 set -x
 echo Disconnecting VPN...
-#kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Disconnect)"
-#sleep 5
+kodi-send --action="RunScript(/storage/.kodi/addons/service.vpn.manager/api.py, Disconnect)"
+sleep 5
 echo
 #echo get master from repo..
 #cd /storage/.kodi/docker
@@ -24,8 +24,8 @@ git pull
 #systemctl daemon-reload
 
 #echo copy sh files from repo...
-#chmod +x /storage/git/docker-logitechmediaserver-rpi2/*.sh
+chmod +x /storage/git/docker-logitechmediaserver-rpi2/*.sh
 
 echo Starting getlms.sh...
 set +x
-#exec /storage/git/docker-logitechmediaserver-rpi2/getlms.sh
+exec /storage/git/docker-logitechmediaserver-rpi2/getlms.sh
