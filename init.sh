@@ -27,5 +27,5 @@ git pull
 chmod +x /storage/git/docker-logitechmediaserver-rpi2/*.sh
 
 echo Starting getlms.sh...
-set +x
 exec /storage/git/docker-logitechmediaserver-rpi2/getlms.sh
+set +x
