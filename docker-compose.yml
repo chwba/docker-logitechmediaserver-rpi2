@@ -1,6 +1,6 @@
 # The "init:" keyword, below, requires either version "2.2"
 # or "2.3".
-version: "2.3"
+version: "3.7"
 
 services:
   lms:
@@ -19,11 +19,14 @@ services:
       - "3483:3483"
       - "3483:3483/udp"
     restart: always
+    image: lms
+    container_name: lms_container
 #    init: true
   git:
     build:
       context: ./
       dockerfile: gitDockerfile
     image: git_docker
+    container_name: git_docker_container
 volumes:
   squeezebox:
