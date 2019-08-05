@@ -23,8 +23,7 @@ RUN url=$(curl "$PACKAGE_VERSION_URL") && \
 RUN userdel squeezeboxserver
 
 VOLUME $SQUEEZE_VOL
-#EXPOSE 3483 3483/udp 9000 9090
-EXPOSE 3483 3483/udp 9000
+EXPOSE 3483 3483/udp 9000 9090
 
 COPY entrypoint.sh /entrypoint.sh
 COPY start-squeezebox.sh /start-squeezebox.sh

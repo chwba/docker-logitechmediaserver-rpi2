@@ -15,7 +15,7 @@ services:
 ## access the web ui on port 80.
 #     - "80:9000"
       - "9000:9000"
-#      - "9090:9090"
+      - "9090:9090"
       - "3483:3483"
       - "3483:3483/udp"
     restart: always
