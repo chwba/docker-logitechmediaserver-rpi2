@@ -4,7 +4,7 @@
 * cd /storage/.kodi/docker/docker-logitechmediaserver-rpi2-master/
 * ./init.sh
 
-**CAUTION: WILL STOP AND DELETE ALL DOCKER CONTAINERS/IMAGES (to change this behaviour getlms.sh must be amended manually**
+**CAUTION: WILL STOP AND DELETE ALL DOCKER CONTAINERS/IMAGES (to change this behaviour getlms.sh must be edited manually)**
 
 #### Automatic updates:
 For daily updates through rebuilding the docker image just create a task with the following content which runs every day:
