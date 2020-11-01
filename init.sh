@@ -9,10 +9,10 @@ echo
 #wget https://github.com/chwba/docker-logitechmediaserver-rpi2/archive/master.zip && unzip master.zip
 mkdir /storage/git
 mkdir /storage/squeezebox
-function git () {
-(docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git git_docker "$@")
+git () {
+(docker run -ti --rm -v "${HOME}":/root -v "$(pwd)":/git git_docker "$@")
 }
-cd /storage/git/docker-logitechmediaserver-rpi2
+cd /storage/git/docker-logitechmediaserver-rpi2 || exit
 git pull
 
 # overwrite service files
@@ -27,5 +27,5 @@ git pull
 chmod +x /storage/git/docker-logitechmediaserver-rpi2/*.sh
 
 echo Starting getlms.sh...
-exec /storage/git/docker-logitechmediaserver-rpi2/getlms.sh
 set +x
+exec /storage/git/docker-logitechmediaserver-rpi2/getlms.sh

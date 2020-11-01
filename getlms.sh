@@ -10,13 +10,13 @@ echo Clearing docker-volumes...
 # systemctl disable lmslog.timer
 # sleep 1
 /storage/bin/docker-compose down
-/storage/.kodi/addons/service.system.docker/bin/docker kill  $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
+/storage/.kodi/addons/service.system.docker/bin/docker kill  "$(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)"
 sleep 1
-/storage/.kodi/addons/service.system.docker/bin/docker stop  $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
+/storage/.kodi/addons/service.system.docker/bin/docker stop  "$(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)"
 sleep 1
-/storage/.kodi/addons/service.system.docker/bin/docker rm -f $(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)
+/storage/.kodi/addons/service.system.docker/bin/docker rm -f "$(/storage/.kodi/addons/service.system.docker/bin/docker ps -aq)"
 sleep 1
-/storage/.kodi/addons/service.system.docker/bin/docker rmi -f $(/storage/.kodi/addons/service.system.docker/bin/docker images -aq)
+/storage/.kodi/addons/service.system.docker/bin/docker rmi -f "$(/storage/.kodi/addons/service.system.docker/bin/docker images -aq)"
 sleep 1
 /storage/.kodi/addons/service.system.docker/bin/docker system prune -af
 sleep 1
