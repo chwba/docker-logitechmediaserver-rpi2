@@ -4,7 +4,7 @@ MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
 ENV SQUEEZE_VOL /srv/squeezebox
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.1&revision=1&geturl=1&os=debarm
+ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=7.9.4&revision=1&geturl=1&os=debarm
 
 RUN apt-get update && \
 		apt-get -y install --no-install-recommends apt-utils && \
