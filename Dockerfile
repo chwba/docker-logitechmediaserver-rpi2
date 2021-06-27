@@ -6,6 +6,7 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKAGE_VERSION_URL=http://www.mysqueezebox.com/update/?version=8.2&revision=1&geturl=1&os=debarm
 
+RUN ping google.de
 RUN apt-get update && \
 		apt-get -y install curl wget faad flac lame sox libio-socket-ssl-perl tzdata && \
 	apt-get clean
