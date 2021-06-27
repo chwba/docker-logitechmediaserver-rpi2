@@ -22,11 +22,5 @@ services:
     image: lms
     container_name: lms_container
 #    init: true
-  git:
-    build:
-      context: ./
-      dockerfile: gitDockerfile
-    image: git_docker
-    container_name: git_docker_container
 volumes:
   squeezebox:
