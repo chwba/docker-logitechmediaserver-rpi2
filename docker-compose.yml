@@ -5,7 +5,8 @@ version: "3.7"
 services:
   lms:
     build:
-      context: ./
+      network: host 
+      context: .
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /root/lms/squeezebox:/srv/squeezebox
