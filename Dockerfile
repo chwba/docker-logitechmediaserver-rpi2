@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:xenial
+FROM arm64v8/ubuntu
 MAINTAINER chwba <22568014+chwba@users.noreply.github.com>
 
 ENV SQUEEZE_VOL /srv/squeezebox
