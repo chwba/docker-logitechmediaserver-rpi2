@@ -5,6 +5,7 @@ version: "3.7"
 services:
   lms:
     build:
+      network: host
       context: .
     volumes:
       - /etc/localtime:/etc/localtime:ro
