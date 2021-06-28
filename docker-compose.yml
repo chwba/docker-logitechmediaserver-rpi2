@@ -9,8 +9,8 @@ services:
       context: .
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /root/lms/squeezebox:/srv/squeezebox
-      - /root/lms/music:/srv/music
+      - /overlay/upper/root/lms/squezebox:/srv/squeezebox
+      - /overlay/upper/root/lms/music:/srv/music
     ports:
 ## uncomment the following line if you want to be able to
 ## access the web ui on port 80.
